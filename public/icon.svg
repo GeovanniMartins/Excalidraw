@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="pencil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded App Background -->
+  <rect x="32" y="32" width="448" height="448" rx="100" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <!-- Grid pattern background element inside app icon -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="2" stroke-dasharray="8 8">
+    <line x1="96" y1="96" x2="416" y2="96"/>
+    <line x1="96" y1="176" x2="416" y2="176"/>
+    <line x1="96" y1="256" x2="416" y2="256"/>
+    <line x1="96" y1="336" x2="416" y2="336"/>
+    <line x1="96" y1="416" x2="416" y2="416"/>
+
+    <line x1="96" y1="96" x2="96" y2="416"/>
+    <line x1="176" y1="96" x2="176" y2="416"/>
+    <line x1="256" y1="96" x2="256" y2="416"/>
+    <line x1="336" y1="96" x2="336" y2="416"/>
+    <line x1="416" y1="96" x2="416" y2="416"/>
+  </g>
+
+  <!-- Drawn Curve / Whiteboard stroke line -->
+  <path d="M 120 340 C 180 200, 240 400, 310 240 C 340 170, 390 190, 390 190"
+        fill="none"
+        stroke="url(#glow)"
+        stroke-width="20"
+        stroke-linecap="round"/>
+
+  <!-- Draw Magic Sparkles -->
+  <circle cx="330" cy="140" r="10" fill="#fef08a"/>
+  <circle cx="150" cy="180" r="8" fill="#fef08a"/>
+
+  <!-- Pencil / Stylus Drawing Tool -->
+  <g transform="translate(40, -30) rotate(15 256 256)" filter="url(#shadow)">
+    <!-- Pencil Body -->
+    <path d="M 320 120 L 360 160 L 220 300 L 180 260 Z" fill="url(#pencil)"/>
+    <!-- Eraser top -->
+    <path d="M 320 120 L 360 160 L 380 140 C 388 132, 388 118, 380 110 L 370 100 C 362 92, 348 92, 340 100 Z" fill="#f43f5e"/>
+    <!-- Metal Band -->
+    <path d="M 310 110 L 330 90 L 345 105 L 325 125 Z" fill="#cbd5e1"/>
+    <!-- Pencil Tip Base -->
+    <path d="M 180 260 L 220 300 L 160 320 Z" fill="#fde68a"/>
+    <!-- Lead Tip -->
+    <path d="M 160 320 L 175 315 L 165 305 Z" fill="#1e293b"/>
+  </g>
+</svg>

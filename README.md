@@ -1,9 +1,10 @@
-# Excalidraw Whiteboard - Multiplataforma (Web, Android & Windows Desktop)
+# Excalidraw Whiteboard - Multiplataforma (Web, Android, Windows & Linux Desktop)
 
-Este projeto é uma aplicação de Quadro Branco Interativo (Whiteboard) desenvolvida com **React**, **Vite**, **TypeScript** e **@excalidraw/excalidraw**. Ele possui configurações e scripts prontos para ser executado e compilado em três plataformas:
+Este projeto é uma aplicação de Quadro Branco Interativo (Whiteboard) desenvolvida com **React**, **Vite**, **TypeScript** e **@excalidraw/excalidraw**. Ele possui configurações e scripts prontos para ser executado e compilado em quatro plataformas:
 1. **Web**: Navegador via Vite
 2. **Mobile**: Android (APK) via Capacitor
-3. **Desktop**: Windows (.exe) via Electron & electron-builder
+3. **Desktop Windows**: Windows (.exe) via Electron & electron-builder
+4. **Desktop Linux**: Linux Ubuntu/Debian (.AppImage e .deb) via Electron & electron-builder
 
 ---
 
@@ -19,6 +20,11 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina:
 - **Node.js** (versão 18 ou superior) e **npm**
 - **Android Studio** e SDK do Android (necessário para compilar o APK Android)
 - **Java Development Kit (JDK 17+)** (necessário para build Android)
+- **Dependências para compilação Linux (Ubuntu/Debian)**:
+  ```bash
+  sudo apt update
+  sudo apt install -y build-essential libgconf-2-4 libglib2.0-0
+  ```
 
 ---
 
@@ -80,6 +86,16 @@ O arquivo de instalação `.exe` será gerado na pasta `dist-electron/`.
 
 ---
 
+### 6. Gerar Build para Linux Desktop (.AppImage / .deb)
+
+Para gerar os pacotes e executáveis nativos para Linux (Ubuntu/Debian) usando Electron e electron-builder:
+```bash
+npm run build:linux
+```
+Os arquivos empacotados (`.AppImage` e `.deb`) serão gerados na pasta `dist-electron/`.
+
+---
+
 ## 📁 Estrutura de Scripts (`package.json`)
 
 | Comando | Descrição |
@@ -88,6 +104,7 @@ O arquivo de instalação `.exe` será gerado na pasta `dist-electron/`.
 | `npm run build:web` | Compila a aplicação Web estática em `dist/` |
 | `npm run build:android` | Compila o projeto Web e sincroniza com o projeto Android (`cap sync`) |
 | `npm run build:windows` | Compila o projeto Web e empacota o executável Windows (`electron-builder`) |
+| `npm run build:linux` | Compila o projeto Web e empacota os arquivos Linux AppImage/DEB (`electron-builder`) |
 
 ---
 
