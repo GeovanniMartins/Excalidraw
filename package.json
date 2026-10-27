@@ -9,7 +9,8 @@
     "build": "tsc && vite build",
     "build:web": "vite build",
     "build:android": "vite build && cap sync android",
-    "build:windows": "vite build && electron-builder",
+    "build:windows": "vite build && electron-builder --win",
+    "build:linux": "vite build && electron-builder --linux AppImage deb",
     "preview": "vite preview",
     "electron:dev": "concurrently \"vite\" \"cross-env WAIT_ON_WEB=true electron .\""
   },
@@ -43,7 +44,16 @@
       "electron/**/*"
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "public/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Graphics",
+      "icon": "public/icon.png"
     }
   }
 }
